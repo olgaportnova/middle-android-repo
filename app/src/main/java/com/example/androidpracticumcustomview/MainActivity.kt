@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
+import com.example.androidpracticumcustomview.ui.theme.compose.ComposeScreen
+import com.example.androidpracticumcustomview.ui.theme.xml.XmlActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

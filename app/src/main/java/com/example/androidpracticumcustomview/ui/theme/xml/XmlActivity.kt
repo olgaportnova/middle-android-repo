@@ -1,14 +1,17 @@
-package com.example.androidpracticumcustomview
+package com.example.androidpracticumcustomview.ui.theme.xml
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import com.example.androidpracticumcustomview.ui.theme.CustomContainer
+import androidx.compose.ui.res.stringResource
+import com.example.androidpracticumcustomview.R
 
 
 class XmlActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         startXmlPracticum()
@@ -22,16 +25,21 @@ class XmlActivity : ComponentActivity() {
         }
 
         val firstView = TextView(this).apply {
-            // TODO
-            // ...
+            text = getString(R.string.first_view)
+            textSize = 24f
+            setPadding(20, 20, 20, 20)
+            setBackgroundColor(Color.YELLOW)
         }
 
         val secondView = TextView(this).apply {
-            // TODO
-            // ...
+            text = getString(R.string.second_view)
+            textSize = 24f
+            setPadding(20, 20, 20, 20)
+            setBackgroundColor(Color.CYAN)
         }
 
-        // Добавление второго элемента через некоторое время (например, по задержке)
+        customContainer.addView(firstView)
+
         Handler(Looper.getMainLooper()).postDelayed({
             customContainer.addView(secondView)
         }, 2000)

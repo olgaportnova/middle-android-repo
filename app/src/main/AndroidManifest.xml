@@ -21,8 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".XmlActivity" />
-        <activity android:name=".ComposeScreen" />
+        <activity android:name=".ui.theme.xml.XmlActivity" />
+        <activity android:name=".ui.theme.compose.ComposeScreen" />
     </application>
 
 </manifest>

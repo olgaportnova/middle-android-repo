@@ -1,9 +1,8 @@
-package com.example.androidpracticumcustomview
+package com.example.androidpracticumcustomview.ui.theme.compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.androidpracticumcustomview.ui.theme.MainScreen
 
 class ComposeScreen : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

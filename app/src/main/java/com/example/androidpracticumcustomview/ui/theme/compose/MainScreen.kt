@@ -11,8 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.androidpracticumcustomview.R
 
 /*
 Задание:
@@ -20,6 +22,10 @@ import androidx.compose.ui.unit.sp
 */
 @Composable
 fun MainScreen(closeActivity: () -> Unit) {
+
+    val firstText = stringResource(id = R.string.first_view)
+    val secondText = stringResource(id = R.string.second_view)
+
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -29,7 +35,7 @@ fun MainScreen(closeActivity: () -> Unit) {
             CustomContainerCompose(
                 firstChild = {
                     Text(
-                        text = "firstView",
+                        text = firstText,
                         fontSize = 22.sp,
                         color = Color.White,
                         modifier = Modifier
@@ -39,7 +45,7 @@ fun MainScreen(closeActivity: () -> Unit) {
                 },
                 secondChild = {
                     Text(
-                        text = "secondView",
+                        text = secondText,
                         fontSize = 22.sp,
                         color = Color.White,
                         modifier = Modifier

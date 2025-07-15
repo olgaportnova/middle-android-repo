@@ -6,9 +6,12 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import androidx.compose.ui.res.stringResource
+import com.example.androidpracticumcustomview.R
 
 
 class XmlActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         startXmlPracticum()
@@ -22,14 +25,14 @@ class XmlActivity : ComponentActivity() {
         }
 
         val firstView = TextView(this).apply {
-            text = "firstView"
+            text = getString(R.string.first_view)
             textSize = 24f
             setPadding(20, 20, 20, 20)
             setBackgroundColor(Color.YELLOW)
         }
 
         val secondView = TextView(this).apply {
-            text = "secondView"
+            text = getString(R.string.second_view)
             textSize = 24f
             setPadding(20, 20, 20, 20)
             setBackgroundColor(Color.CYAN)

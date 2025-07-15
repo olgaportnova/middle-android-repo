@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -28,13 +29,18 @@ import kotlinx.coroutines.delay
 Задание по желанию:
 Предусмотрите параметризацию длительности анимации.
  */
+
+private const val SECOND_CHILD_DELAY_MS = 3000L
+
 @Composable
 fun CustomContainerCompose(
     firstChild: @Composable (() -> Unit)?,
     secondChild: @Composable (() -> Unit)?
 ) {
 
-    val childrenCount = listOfNotNull(firstChild, secondChild).size
+    val childrenCount by remember (firstChild, secondChild){
+        mutableIntStateOf(listOfNotNull(firstChild, secondChild).size)
+    }
     require(childrenCount <= 2) {
         "CustomContainerCompose поддерживает не более двух дочерних элементов"
     }
@@ -47,7 +53,7 @@ fun CustomContainerCompose(
         }
 
         if (secondChild != null) {
-            delay(3000L)
+            delay(SECOND_CHILD_DELAY_MS)
             secondVisible = true
         }
     }
